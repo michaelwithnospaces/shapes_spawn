@@ -1,5 +1,3 @@
-# shapes_spawn
-
 # Shape Drawing and Animation with Raylib
 
 ## Project Overview
@@ -65,24 +63,79 @@ The `config.txt` file contains different configuration settings, each specified 
 - C++ Compiler (GCC or Clang)
 - Raylib (for graphics rendering and handling)
 
-### Building the Project
+To add instructions on how to build the project using the provided `CMakeLists.txt` and Makefile, follow these steps to include it in the `README.md`:
 
-1. **Clone the repository**:
+---
+
+## Building the Project with CMake
+
+This project uses CMake to manage the build process. Below are the steps to build the project from the provided `CMakeLists.txt`.
+
+### Prerequisites
+
+Make sure you have the following installed on your system:
+- **CMake**: Version 3.2 or higher
+- **Raylib**: Installed and available on your system (See [Raylib Installation](#how-to-install-raylib-on-debian-linux) instructions if needed)
+- **C++ Compiler**: GCC or Clang that supports C++11 or higher.
+
+### Build Instructions
+
+1. **Navigate to your project directory**:
+   Open a terminal and move to the root directory of the project, where the `CMakeLists.txt` file is located:
+
    ```bash
-   git clone https://github.com/yourusername/raylib-shapes.git
-   cd raylib-shapes
+   cd /path/to/your/project
    ```
 
-2. **Compile the program**:
-   Assuming that Raylib is installed (instructions below), you can compile the program with:
+2. **Create a build directory**:
+   It’s a good practice to keep build files in a separate directory. Create a `build/` directory:
+
    ```bash
-   g++ -o shape_program main.cpp -lraylib -lGL -lm -lpthread -ldl -lrt -lX11
+   mkdir build
+   cd build
    ```
 
-3. **Run the program**:
+3. **Run CMake**:
+   In the `build` directory, run `cmake` to generate the necessary makefiles for your project:
+
    ```bash
-   ./shape_program
+   cmake ..
    ```
+
+   This command will:
+   - Set the project to use C++11 as specified in `CMakeLists.txt`.
+   - Locate all the `.cpp` files in the `src/` directory.
+   - Link your project with the Raylib library.
+
+4. **Build the project**:
+   Once the CMake configuration is complete, run the `make` command to compile and build the project:
+
+   ```bash
+   make
+   ```
+
+   This will generate an executable file named `ASSIGNMENT_1` in the `build/` directory.
+
+5. **Run the project**:
+   After the build is complete, run the generated executable:
+
+   ```bash
+   ./ASSIGNMENT_1
+   ```
+
+   The application should now launch and display the shapes as per the configuration in `config.txt`.
+
+### Cleaning the Build Files
+
+If you want to clean the build files and start fresh, you can use:
+
+```bash
+make clean
+```
+
+This will remove the previously built files but keep the CMake configuration. You can delete the `build/` directory manually if you want to fully reset.
+
+---
 
 ### How to Install Raylib on Debian Linux
 
@@ -114,6 +167,7 @@ To run this project, you need to install the Raylib library. Here’s how to ins
 For further information, you can check the official [Raylib documentation](https://www.raylib.com/) or its GitHub repository.
 
 ---
+
 
 
 ## Acknowledgments
