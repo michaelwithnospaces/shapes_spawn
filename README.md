@@ -1,6 +1,6 @@
 # Shape Drawing and Animation with Raylib
 
-## Project Overview
+## Project Overview - COMP4300 - Game Programming by Dave Churchill
 
 This C++ project uses the [Raylib](https://www.raylib.com/) library to read a configuration file containing descriptions of various shapes, such as rectangles and circles, and then draws these shapes on the screen. Each shape is animated and "bounces" off the edges of the window when it reaches them. Additionally, the shape's name is displayed in the center of the shape, using a specified font and color.
 
